@@ -11,7 +11,7 @@
     var container;
 
 
-    var bang = pub.bang = function(opts) {
+    var create = pub.create = function(opts) {
         options = _.extend(options, opts);
         container = _.isString(options.container) ? $(options.container) : options.container;
 
@@ -36,6 +36,6 @@
         return options.template(templateText, item.data);
     }
 
-    this.atimeline = bang;
+    this.atimeline = create;
 
 }).call(this);

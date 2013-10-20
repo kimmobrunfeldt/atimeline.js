@@ -1,1 +1,1 @@
-script: grunt test --verbose --force
+script: grunt test
