@@ -10,6 +10,10 @@
   "scripts": {
     "test": "grunt test"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/kimmobrunfeldt/atimeline.js.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "v0.1.9",
