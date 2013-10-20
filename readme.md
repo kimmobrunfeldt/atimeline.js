@@ -1,3 +1,5 @@
+![Build status](https://api.travis-ci.org/kimmobrunfeldt/atimeline.js.png)
+
 Warning: This is work in progress!
 
 
