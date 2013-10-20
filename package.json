@@ -1,6 +1,15 @@
 {
   "name": "atimeline",
+  "description": "Create simple and beautiful timelines",
   "version": "0.1.0",
+  "author": {
+    "name": "Kimmo Brunfeldt",
+    "email": "kimmobrunfeldt+atimeline@gmail.com"
+  },
+  "homepage": "http://kimmobrunfeldt.github.io/atimeline.js/",
+  "scripts": {
+    "test": "grunt test"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "v0.1.9",
