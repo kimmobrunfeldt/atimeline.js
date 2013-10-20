@@ -18,5 +18,6 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-mocha-test": "~0.7.0",
     "blanket": "~1.1.5"
-  }
+  },
+  "engines": {"node": ">= 0.6"}
 }
