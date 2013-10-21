@@ -1,0 +1,21 @@
+
+
+.timeline-item:hover {
+    cursor: pointer;
+    border-color: #555;
+}
+
+.timeline-item {
+    width: 40%;
+    margin: 30px 4% 10px 4%;
+    float: left;
+    background-color:#ffffff;
+    border:solid 1px #B4BBCD;
+    min-height:50px;
+    text-align:justify;
+    word-wrap:break-word;
+}
+
+.timeline-project {
+
+}

@@ -5,16 +5,27 @@
         {
           "start": 1000,
           "type": "project",
+          "keywords": ['proudof'],
           "data": {
             "header": "Timeline.js",
             "text": "This project is my newest stuff"
           }
         },
         {
-          "start": 1000,
+          "start": 1500,
           "type": "project",
+          "keywords": ['proudof'],
           "data": {
             "header": "Kauko",
+            "text": "Remote control for any OS"
+          }
+        },
+        {
+          "start": 2000,
+          "type": "project",
+          "keywords": ['proudof'],
+          "data": {
+            "header": "Test",
             "text": "Remote control for any OS"
           }
         }

@@ -16,8 +16,16 @@
         container = _.isString(options.container) ? $(options.container) : options.container;
 
         createTimelineItems();
+        layoutTimelineItems();
     };
 
+    var render = pub.render = function() {
+
+    };
+
+    function layoutTimelineItems() {
+        container.masonry({itemSelector : '.item'});
+    }
 
     function createTimelineItems() {
         _.each(options.timeline.items, function(item) {
@@ -32,8 +40,12 @@
 
     function renderItem(item) {
         var templateText = options.timeline.templates[item.type];
+        var itemTypeClass = 'timeline-' + item.type;
+        var html = '<div class="timeline-item ' + itemTypeClass + '">' +
+            options.template(templateText, item.data) +
+            '</div>';
 
-        return options.template(templateText, item.data);
+        return html;
     }
 
     this.atimeline = create;
