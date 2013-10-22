@@ -57,7 +57,7 @@ module.exports = function(grunt) {
                     quiet: true,
                     // specify a destination file to capture the mocha
                     // output (the quiet option does not suppress this)
-                    captureFile: ''
+                    captureFile: 'test/coverage.html'
                 },
                 src: ['test/*.js']
             }
