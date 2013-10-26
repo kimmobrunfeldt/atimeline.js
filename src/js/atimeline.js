@@ -1,6 +1,17 @@
 ;
 
 (function() {
+    var resizeTimeout;
+    $(window).resize(function() {
+        if (resizeTimeout) clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            $(this).trigger('resizeEnd');
+        }, 300);
+    });
+})();
+
+
+(function() {
 
     var pub = {};
     var options = {
@@ -10,7 +21,7 @@
     };
     var container;
 
-    $(window).resize(function() {
+    $(window).on('resizeEnd', function() {
         layout();
     });
 
@@ -61,8 +72,12 @@
     }
 
     function randomId() {
-        var currentTime = +new Date();
-        return 'timeline-' + currentTime;
+        var uniq = 'xxxxxxxxxxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+            return v.toString(16);
+        });
+
+        return 'timeline-' + uniq;
     }
 
     function renderItem(item, id) {
