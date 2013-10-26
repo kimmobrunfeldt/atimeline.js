@@ -18,9 +18,7 @@ body {
     zoom:1;
 }
 
-
 #timeline {
-    width: 80%;
+    width: 100%;
+    position: relative;
 }
-
-

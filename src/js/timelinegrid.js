@@ -3,8 +3,7 @@ if (typeof define !== 'function') { var define = require('amdefine')(module, req
 
 define(['utils'], function(utils) {
 */
-
-    var TimelineGrid = (function(options) {
+var TimelineGrid = (function(options) {
         /*
         Module to help positioning boxes on a vertical timeline.
         Boxes are added as tightly as possible while keeping chronological
@@ -32,7 +31,7 @@ define(['utils'], function(utils) {
             boxMarginPx: 10,
 
             // Margin that should be left between timeline pointers at minimum.
-            lineMarginPx: 10,
+            lineMarginPx: 20,
 
             // Which side should be started from
             startSide: 'left'
@@ -67,11 +66,11 @@ define(['utils'], function(utils) {
             if (leftEnd < rightEnd) {
                 side = 'left';
                 lastMiddle = right !== null ? right.middle : 0;
-                newMiddle = boxMiddle(lastMiddle, leftEnd, height);
+                newMiddle = newBoxMiddle(lastMiddle, leftEnd, height);
             } else if (leftEnd === rightEnd) {
                 // If the boxes are at same level, favor the starting side
                 side = options.startSide;
-                end = leftEnd;
+                newMiddle = leftEnd + height;
             } else {
                 side = 'right';
                 lastMiddle = left !== null ? left.middle : 0;

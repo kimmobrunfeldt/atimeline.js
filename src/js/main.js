@@ -1,7 +1,17 @@
+
+
 (function(){
 
     var timeline = {
-      "items": [
+        "options": {
+            "timelineWidth": "10px"
+        },
+
+        "templates": {
+            "project": "<h1>{{ header }}</h1> <p> {{ text }} </p>"
+        },
+
+        "items": [
         {
           "start": 1000,
           "type": "project",
@@ -29,11 +39,7 @@
             "text": "Remote control for any OS"
           }
         }
-      ],
-
-      "templates": {
-        "project": "<h1>{{ header }}</h1> <p> {{ text }} </p>"
-      }
+      ]
     };
 
 
@@ -44,10 +50,19 @@
 
     $(window).load(function() {
 
-
         window.atimeline({
             timeline: timeline,
             container: '#timeline'
         });
+
+        var timelinegrid = TimelineGrid();
+        var heights = [50, 10, 30, 20, 50, 10, 30, 5, 50, 100, 30, 200, 30, 20, 10, 50, 25, 50, 30];
+        _.each(heights, function(height) {
+            var box = timelinegrid.add(height);
+            $('.timecontainer').append('<div class="line ' + box.side + '" style="top: ' + box.start + 'px; height: ' + box.height + 'px;"><div class="middle"></div></div>');
+            console.log(box);
+        });
+
+
     });
 })();
