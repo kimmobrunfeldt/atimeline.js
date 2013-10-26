@@ -1,6 +1,8 @@
+/*
 if (typeof define !== 'function') { var define = require('amdefine')(module, require); }
 
 define(['utils'], function(utils) {
+*/
 
     var TimelineGrid = (function(options) {
         /*
@@ -22,7 +24,7 @@ define(['utils'], function(utils) {
 
         var pub = {};
 
-        options = utils.extend({
+        options = _.extend({
             // Padding in start of the timeline.
             timelinePaddingPx: 20,
 
@@ -55,7 +57,7 @@ define(['utils'], function(utils) {
         }
 
         function append(height) {
-            var side, newBoxMiddle, lastMiddle, end;
+            var side, newMiddle, lastMiddle, end;
 
             var left = lastLeft();
             var right = lastRight();
@@ -65,7 +67,7 @@ define(['utils'], function(utils) {
             if (leftEnd < rightEnd) {
                 side = 'left';
                 lastMiddle = right !== null ? right.middle : 0;
-                newBoxMiddle = boxMiddle(lastMiddle, leftEnd, height);
+                newMiddle = boxMiddle(lastMiddle, leftEnd, height);
             } else if (leftEnd === rightEnd) {
                 // If the boxes are at same level, favor the starting side
                 side = options.startSide;
@@ -73,17 +75,17 @@ define(['utils'], function(utils) {
             } else {
                 side = 'right';
                 lastMiddle = left !== null ? left.middle : 0;
-                newBoxMiddle = newBoxMiddle(lastMiddle, rightEnd, height);
+                newMiddle = newBoxMiddle(lastMiddle, rightEnd, height);
             }
 
-            var node = createNode(side, newBoxMiddle - height / 2, height);
+            var node = createNode(side, newMiddle - height / 2, height);
             _nodes.push(node);
             return node;
         }
 
         // Calculates middle position for new box to be added
         function newBoxMiddle(lastMiddle, lastBoxEnd, height) {
-            boxMiddle = lastMiddle + options.lineMarginPx;
+            var boxMiddle = lastMiddle + options.lineMarginPx;
 
             // If the new box overlaps a previous box
             if (boxMiddle - height / 2 < lastBoxEnd + options.boxMarginPx) {
@@ -117,11 +119,13 @@ define(['utils'], function(utils) {
         function createNode(side, start, height) {
             var end = start + height;
             var middle = start + (end - start) / 2;
-            return {side: side, start: start, middle: middle, end: end};
+            return {side: side, start: start, middle: middle, end: end, height: height};
         }
 
         return pub;
     });
-
+/*
     return {TimelineGrid: TimelineGrid};
 });
+
+*/
