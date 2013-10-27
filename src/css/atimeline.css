@@ -1,5 +1,5 @@
 
-.timeline {
+.tl-timeline {
     margin:0 20px 0 20px;
     width: 8px;
     height: 100%;
@@ -9,12 +9,12 @@
     z-index: -1;
 }
 
-.timeline-item:hover {
+.tl-item:hover {
     cursor: pointer;
     border-color: #555;
 }
 
-.timeline-item {
+.tl-item {
     position: absolute;
     width: 45%;
     float: left;
@@ -25,15 +25,15 @@
     word-wrap: break-word;
 }
 
-.timeline-item-left {
+.tl-item-left {
     left: 0;
 }
 
-.timeline-item-right {
+.tl-item-right {
     right: 0;
 }
 
-.timeline-pointer {
+.tl-pointer {
     position: absolute;
     top: 50%;
     height: 1px;
@@ -41,16 +41,16 @@
     background: #555;
 }
 
-.timeline-item-left .timeline-pointer {
+.tl-item-left .tl-pointer {
     right: -20px;
 }
 
-.timeline-item-right .timeline-pointer {
+.tl-item-right .tl-pointer {
     left: -20px;
 }
 
 
-.timeline-thought {
+.tl-thought {
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;

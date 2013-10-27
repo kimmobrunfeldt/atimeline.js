@@ -18,6 +18,8 @@
         // Template rendering function
         renderTemplate: _.template,
 
+        leftItemClass: 'tl-item-left',
+        rightItemClass: 'tl-item-right'
     };
     var container;
 
@@ -46,18 +48,18 @@
     }
 
     function createTimeline() {
-        container.append('<div class="timeline"></div>');
+        container.append('<div class="tl-timeline"></div>');
     }
 
     function createTimelineItem(item) {
-        var id = item.id ? item.id : randomId();
+        var id = item.id ? 'tl-' + item.id : randomId();
         var html = renderItem(item, id);
         container.append(html);
     }
 
     function positionTimelineItems() {
         var grid = TimelineGrid();
-        $('.timeline-item').each(function() {
+        $('.tl-item').each(function() {
             positionTimelineItem(grid, $(this));
         });
     }
@@ -66,8 +68,8 @@
         var height = $el.height();
         var node = grid.add(height);
         $el.css('top', node.start);
-        var className = node.side === 'left' ? 'timeline-item-left' : 'timeline-item-right';
-        $el.removeClass('timeline-item-left timeline-item-right');
+        var className = node.side === 'left' ? options.leftItemClass : options.rightItemClass;
+        $el.removeClass([options.leftItemClass, options.rightItemClass].join(' '));
         $el.addClass(className);
     }
 
@@ -77,16 +79,16 @@
             return v.toString(16);
         });
 
-        return 'timeline-' + uniq;
+        return 'tl-' + uniq;
     }
 
     function renderItem(item, id) {
         var templateText = options.timeline.templates[item.type];
-        var itemTypeClass = 'timeline-' + item.type;
-        var html = '<div id="' + id + '" class="timeline-item ' +
+        var itemTypeClass = 'tl-' + item.type;
+        var html = '<div id="' + id + '" class="tl-item ' +
             itemTypeClass + '">' +
             options.renderTemplate(templateText, item.data) +
-            '<div class="timeline-pointer"></div>' +
+            '<div class="tl-pointer"></div>' +
             '</div>';
 
         return html;

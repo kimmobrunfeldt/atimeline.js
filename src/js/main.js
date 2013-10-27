@@ -15,15 +15,17 @@
         {
           "start": 1000,
           "type": "project",
+          "id": "atimeline",
           "keywords": ['proudof'],
           "data": {
-            "header": "Timeline.js",
+            "header": "atimeline.js",
             "text": "This project is my newest stuff"
           }
         },
         {
           "start": 1500,
           "type": "project",
+          "id": "kauko",
           "keywords": ['proudof'],
           "data": {
             "header": "Kauko",
@@ -33,6 +35,7 @@
         {
           "start": 2000,
           "type": "project",
+          "id": "testing",
           "keywords": ['proudof'],
           "data": {
             "header": "Test",
@@ -42,6 +45,7 @@
         {
           "start": 3000,
           "type": "thought",
+          "id": "thought",
           "keywords": ['proudof'],
           "data": {
             "text": "This is a thought"
